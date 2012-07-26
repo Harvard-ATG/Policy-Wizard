@@ -1,3 +1,9 @@
 [submodule "yii"]
 	path = yii
 	url = git@github.com:jazahn/yii.git
+[submodule "wizard/protected/extensions/HarvardPerson"]
+	path = wizard/protected/extensions/HarvardPerson
+	url = git@github.com:jazahn/yii-HarvardPerson.git
+[submodule "wizard/protected/extensions/isitestool"]
+	path = wizard/protected/extensions/isitestool
+	url = git@github.com:jazahn/yii-isitestool.git
