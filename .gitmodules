@@ -7,3 +7,6 @@
 [submodule "wizard/protected/extensions/isitestool"]
 	path = wizard/protected/extensions/isitestool
 	url = git@github.com:jazahn/yii-isitestool.git
+[submodule "wizard/protected/extensions/smarty-renderer"]
+	path = wizard/protected/extensions/smarty-renderer
+	url = git@github.com:jazahn/smarty-renderer.git
