@@ -5,7 +5,6 @@ class m120731_021332_policies extends CDbMigration
 {
 	public function up()
 	{
-		$this->dropTable('POLICIES');
 		$this->createTable('POLICIES', array(
 			'ID' => 'pk',
 			'EXTERNAL_ID' => 'integer',
