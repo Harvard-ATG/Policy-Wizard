@@ -1,9 +1,10 @@
 .svn
 .DS_Store
-/policywizard/protected/config/database.php
-/policywizard/protected/config/ldap.php
-/policywizard/protected/config/isites.php
-/policywizard/protected/config/main.php
-/policywizard/assets/*
-/policywizard/protected/runtime/*
-/policywizard/protected/runtime/application.log
+wizard/protected/config/database.php
+wizard/protected/config/ldap.php
+wizard/protected/config/isites.php
+wizard/protected/config/main.php
+wizard/protected/config/console.php
+wizard/assets/*
+wizard/protected/runtime/*
+wizard/protected/runtime/application.log
