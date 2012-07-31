@@ -1,0 +1,9 @@
+.svn
+.DS_Store
+/policywizard/protected/config/database.php
+/policywizard/protected/config/ldap.php
+/policywizard/protected/config/isites.php
+/policywizard/protected/config/main.php
+/policywizard/assets/*
+/policywizard/protected/runtime/*
+/policywizard/protected/runtime/application.log
