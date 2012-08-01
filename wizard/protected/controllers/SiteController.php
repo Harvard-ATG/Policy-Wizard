@@ -27,9 +27,29 @@ class SiteController extends Controller
 	 */
 	public function actionIndex()
 	{
-		// renders the view file 'protected/views/site/index.php'
-		// using the default layout 'protected/views/layouts/main.php'
+	
+		// if there is no active policy for this topic
+		// and if it's an enrollee
+		// render index
 		$this->render('index');
+		
+		// if there is no active policy for this topic
+		// and if it's an admin
+		// render admindex
+		
+		// if there is an active policy for this topic
+		// and if it's an enrollee
+		// redirect to policy/index
+		// $this->redirect($this->url('/policy/index/'));
+		
+		// if there is an active policy for this topic
+		// and if it's an admin
+		// redirect to policy/admindex
+		// $this->redirect($this->url('/policy/admindex/'));
+		
+		
+		
+	
 	}
 
 	/**
