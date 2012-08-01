@@ -5,6 +5,15 @@ $host = "http://".$_SERVER['HTTP_HOST'];
 <head>    
 </head>
 <body>
+	<titlebar>
+		<icon state="edit">
+			<title>Edit</title>
+			<request>tools/index</request>
+			<image>edit_icon.jpg</image>
+			<permission>15</permission>
+		</icon>
+	</titlebar>
+	
 	<link href="<?php echo $host; ?>/css/bootstrap.css" rel="stylesheet" type="text/css"/>
     <link href="<?php echo $host; ?>/css/bootstrap-responsive.css" rel="stylesheet" type="text/css"/>
 
