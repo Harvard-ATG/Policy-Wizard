@@ -7,6 +7,34 @@
  */
 class UserIdentity extends CUserIdentity
 {
+
+	const SUPER = 9;
+	const OWNER = 7;
+	const ADMIN = 5;
+	const ENROLLEE = 3;
+	const GUEST = 1;
+
+	public $id;
+	protected $external_id;
+	public $name;
+	public $fname;
+	public $lname;
+	// this is a hash of collections and permissions
+	protected $collections;
+	public $perm;
+	public $perm_id;
+	
+	/**
+	 * Overriding constructor to help with testing
+	 */
+	public function __construct($id='', $userid='', $name='') {
+		$this->username = $id;
+		//$this->id = $id;
+		$this->userid = $userid;
+		$this->name = $name;
+	}
+	
+
 	/**
 	 * Authenticates a user.
 	 * The example implementation makes sure if the username and password
@@ -17,17 +45,32 @@ class UserIdentity extends CUserIdentity
 	 */
 	public function authenticate()
 	{
-		$users=array(
-			// username => password
-			'demo'=>'demo',
-			'admin'=>'admin',
-		);
-		if(!isset($users[$this->username]))
-			$this->errorCode=self::ERROR_USERNAME_INVALID;
-		else if($users[$this->username]!==$this->password)
-			$this->errorCode=self::ERROR_PASSWORD_INVALID;
-		else
-			$this->errorCode=self::ERROR_NONE;
+
+		$this->errorCode=self::ERROR_NONE;
+		
 		return !$this->errorCode;
+		
 	}
+	
+	/**
+	* UserIdentity::setup
+	*
+	* we check / update the database here.  
+	*
+	*/
+	protected function setup(){
+		
+		//error_log("UserIdentity::setup");
+		// if username is set, then we are logged in
+		if($this->external_id){
+
+			
+			
+		}
+
+
+		
+	}
+	
+	
 }
