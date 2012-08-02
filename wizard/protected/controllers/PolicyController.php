@@ -1,6 +1,6 @@
 <?php
 
-class SiteController extends Controller
+class PolicyController extends Controller
 {
 	/**
 	 * @return array action filters
@@ -45,7 +45,7 @@ class SiteController extends Controller
 	}
 	
 	public function actionSelection(){
-		
+		$this->render('selection');
 	}
 
 	
