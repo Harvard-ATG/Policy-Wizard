@@ -12,7 +12,7 @@ class WebUser extends CWebUser {
 	 */
 	public function login($identity,$duration=0)
 	{
-		error_log("webuser::login");
+
 		$id=$identity->getId();
 		$states=$identity->getPersistentStates();
 		if($this->beforeLogin($id,$states,false))
@@ -39,6 +39,13 @@ class WebUser extends CWebUser {
 		return !$this->getIsGuest();
 	}
 	
+	/**
+	 * this overloads CWebUser::checkAccess to circumvent the use of authManager,
+	 * this is much simpler, 
+	 * this is used in every controllers accessControl method accessRules when checking against roles
+	 * @param integer $operation this is the id of the permission we're checking against
+	 * @return boolean
+	 */
 	public function checkAccess($operation, $params=array()){
 
 		if (empty($this->id)) {

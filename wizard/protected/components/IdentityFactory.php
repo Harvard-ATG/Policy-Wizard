@@ -6,7 +6,7 @@ class IdentityFactory {
 		if($authmethod == ''){
 			$authmethod = Yii::app()->params->authMethod;
 		}
-		error_log("getIdentity: ".$authmethod);
+
 		switch($authmethod){
 			case 'facebook':
 				$identity = new FacebookIdentity();
