@@ -34,8 +34,25 @@ class WebUser extends CWebUser {
 		$this->lname = $identity->lname;
 		$this->perm = $identity->perm;
 		$this->perm_id = $identity->perm_id;
-
+		
+		
 		return !$this->getIsGuest();
+	}
+	
+	public function checkAccess($operation, $params=array()){
+
+		if (empty($this->id)) {
+			// Not identified => no rights
+			//return false;
+		}
+
+		$role = Yii::app()->user->perm_id;
+		if ($role == UserIdentity::SUPER) {
+			return true; // super role has access to everything
+		}
+		// allow access if the operation request is the current user's role
+		return ($operation === Yii::app()->user->perm);
+
 	}
 	
 	
