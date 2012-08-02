@@ -1,40 +1,33 @@
 <?php
 
 class SiteController extends Controller
-{
+{	
+	
 	/**
-	 * Declares class-based actions.
+	 * @return array action filters
 	 */
-	public function actions()
+	public function filters()
 	{
 		return array(
-			// captcha action renders the CAPTCHA image displayed on the contact page
-			'captcha'=>array(
-				'class'=>'CCaptchaAction',
-				'backColor'=>0xFFFFFF,
-			),
-			// page action renders "static" pages stored under 'protected/views/site/pages'
-			// They can be accessed via: index.php?r=site/page&view=FileName
-			'page'=>array(
-				'class'=>'CViewAction',
-			),
+			'accessControl', // perform access control for CRUD operations
 		);
 	}
-	
+
+	/**
+	 * Specifies the access control rules.
+	 * This method is used by the 'accessControl' filter.
+	 * @return array access control rules
+	 */
 	public function accessRules()
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','admindex'),
+				'actions'=>array('index','view','jsredirect'),
 				'users'=>array('*'),
 			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','edit'),
-				'users'=>array('@'),
-			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
+			array('allow',  // allow all users to perform 'index' and 'view' actions
+				'actions'=>array('admindex'),
+				'roles'=>array('admin','super'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -59,8 +52,6 @@ class SiteController extends Controller
 		if($perm_id <= UserIdentity::ENROLLEE){
 			$this->render('index');			
 		} else {
-			error_log("redirecting...");
-			error_log($this->url('/site/admindex'));
 			$this->jsredirect($this->url('/site/admindex'));
 		}
 		
@@ -79,14 +70,12 @@ class SiteController extends Controller
 	}
 	
 	public function actionAdmindex(){
-		error_log("admindex");
 		$this->render('admindex');			
 		
 	}
 
 	
 	public function actionJsredirect(){
-		error_log(Yii::app()->session['jsredirect']);
 		
 		if(isset(Yii::app()->session['jsredirect'])){
 			$this->render('jsredirect',array(
