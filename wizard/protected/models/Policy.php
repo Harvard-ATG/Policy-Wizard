@@ -56,7 +56,7 @@ class Policy extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('EXTERNAL_ID, PUBLISHED_BY', 'required'),
+			array('EXTERNAL_ID', 'required'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('ID, EXTERNAL_ID, IS_PUBLISHED, PUBLISHED_BY, PUBLISHED_DATE, BODY', 'safe', 'on'=>'search'),
@@ -129,6 +129,40 @@ class Policy extends CActiveRecord
 			return false;
 		else
 			return true;
+		
+	}
+	
+	/**
+	 * saves a Policy
+	 * @param text $body
+	 * @param string $external_id (topic_id)
+	 * @param integer $policy_id defaults to null
+	 * @return boolean
+	 */
+	public function savePolicy($body, $external_id, $policy_id=null){
+		if($policy_id){
+			$policy = Policy::model()->findByPk($policy_id);
+		} else {
+			$policy = new Policy;
+		}
+		
+		// set the external_id
+		$policy->EXTERNAL_ID = $external_id;
+		// set the body
+		$policy->BODY = $body;
+		return $policy->save();
+		
+	}
+
+	/**
+	 * publishes Policy
+	 * @param text $body
+	 * @param string $external_id (topic_id)
+	 * @param integer $policy_id defaults to null
+	 * @return boolean
+	 */
+	public function publishPolicy($body, $external_id, $policy_id=null){
+		
 		
 	}
 	
