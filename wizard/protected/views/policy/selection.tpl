@@ -21,7 +21,7 @@ Discussion and the exchange of ideas are essential to academic work.  For assign
 <h3>b.	Problem Sets</h3>
 <div class="well">
 Discussion and the exchange of ideas are essential to doing academic work.  For assignments in this course, you are encouraged to consult with your classmates as you work on problem sets.  However, after discussions with peers, make sure that you can work through the problem yourself and ensure that any answers you submit for evaluation are the result of your own efforts.  In addition, you must cite any books, articles, websites, lectures, etc that have helped you with your work using appropriate citation practices.  Similarly, you must list the names of students with whom you have collaborated on problem sets. <br/>
-<a class="btn btn-large btn-primary" href="#">Choose this Template</a>
+<a class="btn btn-large btn-primary" href="{url url='/policy/edit/2'}">Choose this Template</a>
 </div>
 </div>
 
@@ -31,7 +31,7 @@ Discussion and the exchange of ideas are essential to doing academic work.  For 
 <div class="well">
 Students should be aware that in this course collaboration of any sort on any work submitted for formal evaluation is not permitted.  This means that you may not discuss your problem sets, paper assignments, exams, or any other assignments with other students.  All work should be entirely your own and must use appropriate citation practices to acknowledge the use of books, articles, websites, lectures, discussions, etc., that you have consulted to complete your assignments.
 <br/>
-<a class="btn btn-large btn-primary" href="#">Choose this Template</a>
+<a class="btn btn-large btn-primary" href="{url url='/policy/edit/3'}">Choose this Template</a>
 </div>
 
 <h2>III.	Instructions for customizing collaboration policy</h2>
