@@ -25,7 +25,7 @@ class PolicyController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('selection'),
+				'actions'=>array('selection','edit'),
 				'roles'=>array('admin','super'),
 			),
 			array('deny',  // deny all users
@@ -48,5 +48,25 @@ class PolicyController extends Controller
 		$this->render('selection');
 	}
 
+	/**
+	 * edit action. 
+	 * this requires a get param
+	 * @param number $id $template_id
+	 * @param number $id2 $policy_id for edit purposes
+	 */
+	public function actionEdit($id='', $id2=''){
+		error_log("actionEdit");
+		$template_id = $id;
+		$policy_id = $id2;
+		if($policy_id ==''){
+			// then it's new
+		} else {
+			// else it's an edit
+			// TODO
+		}
+		$this->render('edit', array(
+			'template_id' => $template_id
+		));
+	}
 	
 }

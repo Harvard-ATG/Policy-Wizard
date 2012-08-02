@@ -16,7 +16,7 @@
 <div class="well">
 Discussion and the exchange of ideas are essential to academic work.  For assignments in this course, you are encouraged to consult with your classmates on the choice of paper topics and to share sources.  You may find it useful to discuss your chosen topic with your peers, particularly if you are working on the same topic as a classmate.  However, you should ensure that any written work you submit for evaluation is the result of your own research and writing and that it reflects your own approach to the topic.  You must also adhere to standard citation practices in this discipline and properly cite any books, articles, websites, lectures, etc. that have helped you with your work.  If you received any help with your writing (feedback on drafts, etc), you must also acknowledge this assistance. 
 <br/>
-<a class="btn btn-large btn-primary" href="#">Choose this Template</a>
+<a class="btn btn-large btn-primary" href="{url url='/policy/edit/1'}">Choose this Template</a>
 </div>
 <h3>b.	Problem Sets</h3>
 <div class="well">
