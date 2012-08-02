@@ -124,6 +124,12 @@ class Policy extends CActiveRecord
 		));
 	}
 	
-	
+	public function hasPolicy($external_id){
+		if(Policy::model()->findByAttributes(array('EXTERNAL_ID'=>$external_id)) == null)
+			return false;
+		else
+			return true;
+		
+	}
 	
 }
