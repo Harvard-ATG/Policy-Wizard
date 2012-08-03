@@ -139,12 +139,10 @@ class Policy extends CActiveRecord
 	 * @param integer $policy_id defaults to null
 	 * @return boolean
 	 */
-	public function savePolicy($body, $external_id, $policy_id=null){
-		if($policy_id){
-			$policy = Policy::model()->findByPk($policy_id);
-		} else {
+	public function savePolicy($body, $external_id){
+		$policy = Policy::model()->findByAttributes(array('EXTERNAL_ID'=>$external_id));
+		if($policy == null)
 			$policy = new Policy;
-		}
 		
 		// set the external_id
 		$policy->EXTERNAL_ID = $external_id;

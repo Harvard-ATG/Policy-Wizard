@@ -31,7 +31,7 @@ class PolicyTest extends CDbTestCase {
 		//test if an edit returns true
 		$body = "asdfasdf";
 		$policy_id = 1;
-		$this->assertTrue(Policy::savePolicy($body, $external_id, $policy_id));
+		$this->assertTrue(Policy::savePolicy($body, $external_id));
 		
 		
 		
