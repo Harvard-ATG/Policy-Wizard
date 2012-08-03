@@ -25,7 +25,7 @@ class PolicyController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow',  // allow admins to do what
-				'actions'=>array('selection','edit','submit'),
+				'actions'=>array('selection','edit','save'),
 				'roles'=>array('admin','super'),
 			),
 			array('deny',  // deny all users
@@ -74,9 +74,9 @@ class PolicyController extends Controller
 		if($body != ''){
 			// then it's a submit
 			// if it's successful, progress to admindex
-			//if(Policy::publishPolicy($body, $policy_id)){
-			//	$this->jsredirect('/policy/admindex');
-			//}
+			if(Policy::publishPolicy($body, $policy_id)){
+				$this->jsredirect('/policy/admindex');
+			}
 		} else {
 			if($policy_id ==''){
 				// then it's new
@@ -95,6 +95,20 @@ class PolicyController extends Controller
 			'policy_id' => $policy_id,
 			'body' => $body,
 		));
+	}
+	
+	public function actionSave(){
+		$this->layout = false;
+		
+		// get the external_id
+		$external_id = Yii::app()->getRequest()->getParam('topicId');
+		// get the body
+		$body = Yii::app()->getRequest()->getParam('body');
+		
+		// save
+		echo json_encode(array('response'=>Policy::savePolicy($body, $external_id)));
+		Yii::app()->end();
+		
 	}
 	
 
