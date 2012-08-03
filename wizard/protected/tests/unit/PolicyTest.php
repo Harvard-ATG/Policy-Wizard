@@ -37,5 +37,18 @@ class PolicyTest extends CDbTestCase {
 		
 		
 	}
+	
+	public function testPublishPolicy(){
+		$external_id = 1;
+		$body = "asdfasdfasdfasdf";
+		
+		$result = Policy::publishPolicy($body, $external_id);
+		$this->assertTrue($result);
+		
+		$policy = Policy::model()->findByAttributes(array('EXTERNAL_ID'=>$external_id));
+		$this->assertEquals(1, $policy->IS_PUBLISHED);
+		$this->assertEquals($body, $policy->BODY);
+		
+	}
    
 }

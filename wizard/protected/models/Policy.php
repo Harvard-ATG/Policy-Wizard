@@ -159,7 +159,17 @@ class Policy extends CActiveRecord
 	 * @param integer $policy_id defaults to null
 	 * @return boolean
 	 */
-	public function publishPolicy($body, $external_id, $policy_id=null){
+	public function publishPolicy($body, $external_id){
+		$policy = Policy::model()->findByAttributes(array('EXTERNAL_ID'=>$external_id));
+		if($policy == null)
+			$policy = new Policy;
+		
+		// set the external_id
+		$policy->EXTERNAL_ID = $external_id;
+		$policy->IS_PUBLISHED = 1;
+		// set the body
+		$policy->BODY = $body;
+		return $policy->save();
 		
 		
 	}
