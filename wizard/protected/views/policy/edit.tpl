@@ -5,13 +5,17 @@
 		
 		
 		<div class="form-actions">
+			<input type="submit" class="btn btn-primary" value="Submit"/>
+			<!-- THIS WILL NOT WORK WITH ISITES
 			<button id="policy-submit" type="submit" class="btn btn-primary">Submit</button>
+			-->
 			<button id="policy-save" class="btn btn-primary" type="button">Save</button>
 			<a class="btn" href="{url url='/site/admindex'}">Cancel</a>
 		</div>
 		
 	</fieldset>	
 </form>
+
 
 <div class="modal hide" id="success-modal">
 	<div class="modal-body">
