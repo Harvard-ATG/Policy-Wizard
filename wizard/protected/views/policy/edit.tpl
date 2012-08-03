@@ -1,7 +1,7 @@
 <form id="policy-form" class="form-horizontal row-fluid isites-form" action="/policy/edit/{$template_id}/{$policy_id}">
 	<fieldset>
 		<legend>Edit Policy</legend>
-		<textarea class="input-xlarge span12" id="policy-body" name="body" rows="20">{$body}</textarea>
+		<textarea class="input-xlarge span12" id="policy-body" name="body" rows="10">{$body}</textarea>
 		
 		
 		<div class="form-actions">
@@ -21,24 +21,29 @@
 		<a href="#" class="btn" data-dismiss="modal">Close</a>
 	</div>
 </div>
+
 <script>
+<![CDATA[
 	failure = function(){
 		console.log("failure");
 	}
-	success = function(data){
-		//data.response;
-		if(data.response == true){
-			//console.log("success");
+	success = function(data, textStatus, xhr){
+		// TODO fix this shit!
+		console.log(data);
+		console.log(textStatus);
+		console.log(xhr)
+		if(data){
+			console.log("success");
 		} else {
-			//console.log("the other failure");
+			console.log("failure getting response data");
 		}
 		$('#success-modal').modal();
-		
+				
 	}
 	
 	savePolicy = function(){
 		// set url
-		url = "{url url='/policy/save'}";
+		url = "{url url='/policy/save' ajax=1}";
 		// get body
 		body = $('#policy-body').val();
 		// set data
@@ -50,7 +55,7 @@
 			url: url,
 			data: data,
 			// TODO fix this shit
-			//dataType: 'json',
+			dataType: 'json',
 			error: failure,
 			success: success
 		});
@@ -59,4 +64,5 @@
 	$(document).ready(function(){
 		$('#policy-save').click(savePolicy);
 	});
+]]>
 </script>
