@@ -50,5 +50,15 @@ class PolicyTest extends CDbTestCase {
 		$this->assertEquals($body, $policy->BODY);
 		
 	}
+	
+	public function testIsPublished(){
+		$external_id = 1;
+		$this->assertFalse(Policy::isPublished($external_id));
+
+		$external_id = 3;
+		$this->assertTrue(Policy::isPublished($external_id));
+
+		
+	}
    
 }

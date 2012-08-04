@@ -131,6 +131,13 @@ class Policy extends CActiveRecord
 			return true;
 		
 	}
+	public function isPublished($external_id){
+		if(Policy::model()->findByAttributes(array('EXTERNAL_ID'=>$external_id))->IS_PUBLISHED == 1)
+			return true;
+		else
+			return false;
+		
+	}
 	
 	/**
 	 * saves a Policy
