@@ -61,7 +61,12 @@ class PolicyController extends Controller
 	}
 	
 	public function actionSelection(){
-		$this->render('selection');
+		$external_id = Yii::app()->getRequest()->getParam('topicId');
+		if(Policy::hasPolicy($external_id)){
+			$this->jsredirect($this->url('/policy/edit'));
+		} else {
+			$this->render('selection');			
+		}
 	}
 
 	/**
