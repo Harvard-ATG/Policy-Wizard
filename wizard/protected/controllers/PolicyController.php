@@ -25,7 +25,7 @@ class PolicyController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow',  // allow admins to do what
-				'actions'=>array('selection','edit','save','admindex'),
+				'actions'=>array('selection','edit','save','admindex','deconfigure'),
 				'roles'=>array('admin','super'),
 			),
 			array('deny',  // deny all users
@@ -126,6 +126,13 @@ class PolicyController extends Controller
 		echo json_encode(array('response'=>'1'));
 		Yii::app()->end();
 		
+	}
+	
+	public function actionDeconfigure(){
+		$external_id = Yii::app()->getRequest()->getParam('topicId');
+		$policy = Policy::model()->findByAttributes(array('EXTERNAL_ID'=>$external_id));
+		$policy->delete();
+		$this->jsredirect($this->url("/site/index"));
 	}
 	
 
