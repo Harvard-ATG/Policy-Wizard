@@ -44,27 +44,34 @@ class SiteController extends Controller
 	{
 		//error_log("actionIndex");
 		$perm_id = Yii::app()->user->perm_id;
-		
+		$external_id = Yii::app()->getRequest()->getParam('topicId');
 		
 		// if there is no active policy for this topic
-		// and if it's an enrollee
-		// render index
-		if($perm_id <= UserIdentity::ENROLLEE){
-			$this->render('index');			
+		if(Policy::hasPolicy($external_id)){
+			// if it is published
+			if(Policy::isPublished($external_id)){
+				if($perm_id <= UserIdentity::ENROLLEE){
+					$this->jsredirect($this->url('/policy/index'));
+				} else {
+					$this->jsredirect($this->url('/policy/admindex'));
+				}
+			} else { // if it's not published
+				if($perm_id <= UserIdentity::ENROLLEE){
+					$this->render('index');			
+				} else {
+					$this->jsredirect($this->url('/site/admindex'));
+				}				
+				
+			}
+			
 		} else {
-			$this->jsredirect($this->url('/site/admindex'));
+			if($perm_id <= UserIdentity::ENROLLEE){
+				$this->render('index');			
+			} else {
+				$this->jsredirect($this->url('/site/admindex'));
+			}
+			
 		}
-		
-		
-		// if there is an active policy for this topic
-		// and if it's an enrollee
-		// redirect to policy/index
-		// $this->redirect($this->url('/policy/index/'));
-		
-		// if there is an active policy for this topic
-		// and if it's an admin
-		// redirect to policy/admindex
-		// $this->redirect($this->url('/policy/admindex/'));
 		
 	
 	}
