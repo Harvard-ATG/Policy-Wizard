@@ -1,3 +1,5 @@
+<h1>Collaboration Policy Statement</h1>
+
 <form id="policy-form" class="form-horizontal row-fluid isites-form" action="/policy/edit/{$template_id}/{$policy_id}">
 	<fieldset>
 		<legend>Edit Policy</legend>
