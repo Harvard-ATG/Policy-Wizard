@@ -70,12 +70,12 @@ class PolicyController extends Controller
 	 * @param number $id $template_id
 	 * @param number $id2 $policy_id for edit purposes
 	 */
-	public function actionEdit($id='', $id2=''){
+	public function actionEdit($id=''){
 		//error_log("actionEdit");
 		$template_id = $id;
-		$policy_id = $id2;
 		$external_id = Yii::app()->getRequest()->getParam('topicId');
 		$templates = PolicyTemplate::getActiveTemplates();
+				
 		
 		// check to see if it's being submitted
 		$body = Yii::app()->getRequest()->getParam('body');
@@ -86,21 +86,24 @@ class PolicyController extends Controller
 				$this->jsredirect($this->url('/policy/admindex'));
 			}
 		} else {
-			if($policy_id == ''){
+			// check if policy exists for external_id
+			if(Policy::hasPolicy($external_id)){
+				$body = Policy::getBody($external_id);
+
+			} else {
 				// then it's new
 				// get the body from the template_id
 				$body = PolicyTemplate::getBody($template_id);
-			} else {
-				// else it's an edit
-				// TODO
-			}			
+
+			}
+	
 			
 		}
 		
 		
 		$this->render('edit', array(
-			'template_id' => $template_id,
-			'policy_id' => $policy_id,
+			//'template_id' => $template_id,
+			//'policy_id' => $policy_id,
 			'body' => $body,
 			'templates'=>$templates
 		));
