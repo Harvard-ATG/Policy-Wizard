@@ -181,4 +181,10 @@ class Policy extends CActiveRecord
 		
 	}
 	
+	public function getBody($external_id){
+		$policy = Policy::model()->findByAttributes(array("EXTERNAL_ID"=>$external_id));
+		return $policy->BODY;
+		
+	}
+	
 }

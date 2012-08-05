@@ -60,5 +60,9 @@ class PolicyTest extends CDbTestCase {
 
 		
 	}
+	
+	public function testGetBody(){
+		$this->markTestIncomplete();
+	}
    
 }
