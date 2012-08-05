@@ -1,6 +1,8 @@
 <form id="policy-form" class="form-horizontal row-fluid isites-form" action="/policy/edit/{$template_id}/{$policy_id}">
 	<fieldset>
 		<legend>Edit Policy</legend>
+
+		<button id="template-modal-btn" type="button" class="btn btn-primary">Show Templates</button>
 		<textarea class="input-xlarge span12" id="policy-body" name="body" rows="10">{$body}</textarea>
 		
 		
@@ -25,6 +27,24 @@
 		<a href="#" class="btn" data-dismiss="modal">Close</a>
 	</div>
 </div>
+
+<div class="modal hide" id="template-modal">
+	<div class="modal-body">
+		<ul>
+		{foreach from=$templates item=template}
+			<li class="well">
+				{$template.NAME}<br/>
+				{$template.BODY}
+			</li>
+		{/foreach}
+		</ul>
+		
+	</div>
+	<div class="modal-footer">
+		<a href="#" class="btn" data-dismiss="modal">Close</a>
+	</div>
+</div>
+
 
 <script>
 <![CDATA[
@@ -54,7 +74,7 @@ tinyMCE.init({
 
         // Drop lists for link/image/media/template dialogs
         //template_external_list_url : "js/template_list.js",
-        external_link_list_url : "js/link_list.js",
+        //external_link_list_url : "js/link_list.js",
         //external_image_list_url : "js/image_list.js",
         //media_external_list_url : "js/media_list.js",
 
@@ -104,9 +124,14 @@ tinymce.execCommand('mceToggleEditor',false,'body');
 			success: success
 		});
 	}
+	
+	openTemplateModal = function(){
+		$('#template-modal').modal();
+	}
 
 	$(document).ready(function(){
 		$('#policy-save').click(savePolicy);
+		$('#template-modal-btn').click(openTemplateModal);
 	});
 ]]>
 </script>

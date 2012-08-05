@@ -68,6 +68,7 @@ class PolicyController extends Controller
 		$template_id = $id;
 		$policy_id = $id2;
 		$external_id = Yii::app()->getRequest()->getParam('topicId');
+		$templates = PolicyTemplate::getActiveTemplates();
 		
 		// check to see if it's being submitted
 		$body = Yii::app()->getRequest()->getParam('body');
@@ -94,6 +95,7 @@ class PolicyController extends Controller
 			'template_id' => $template_id,
 			'policy_id' => $policy_id,
 			'body' => $body,
+			'templates'=>$templates
 		));
 	}
 	
