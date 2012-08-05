@@ -9,7 +9,7 @@ $host = "http://".$_SERVER['HTTP_HOST'];
 	<titlebar>
 		<icon state="edit">
 			<title>Edit</title>
-			<request>tools/index</request>
+			<request>policy/selection</request>
 			<image>edit_icon.jpg</image>
 			<permission>15</permission>
 		</icon>
@@ -290,6 +290,13 @@ $host = "http://".$_SERVER['HTTP_HOST'];
 	background: url("/js/isites/resources/images/film.png") no-repeat 0 0;
 }
 /* END Icons */
+
+.topic-edit-content {
+	display: none;
+}
+#isites-scale-portal-content .topic-edit .content h1 {
+font-size: 30px;
+}
 </style>
     <div class="container">
 
