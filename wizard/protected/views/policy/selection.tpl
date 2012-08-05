@@ -34,18 +34,18 @@ Students should be aware that in this course collaboration of any sort on any wo
 </div>
 
 <h2>III.	Instructions for customizing collaboration policy</h2>
-<div class="span10">
+<div>
 If you choose to write your own policy on collaboration, keep the following guidelines in mind.
 </div>
-<div class="span10">
+<div>
 	<ol>
 <li class="wrap">You should outline explicitly what students may or may not discuss with their classmates outside the classroom and how best to capture those discussions on formal work submitted for course credit.</li>
 
-<li class="wrap">You may want to include citation resources for students including the Harvard Guide to Using Sources.</li>
+<li class="wrap">You may want to include citation resources for students including the <a href="http://usingsources.fas.harvard.edu/icb/icb.do">Harvard Guide to Using Sources</a>.</li>
  
-<li class="wrap">You may want to include information about conforming to the College’s policies on academic integrity found in the Harvard College Handbook for Students.</li>
+<li class="wrap">You may want to include information about conforming to the College’s policies on academic integrity found in the <a href="http://isites.harvard.edu/icb/icb.do?keyword=k69286&pageid=icb.page355695">Harvard College Handbook for Students</a>.</li>
 	</ol>
-	<a class="btn btn-large btn-primary" href="#">Create a Custom Policy</a>
+	<a class="btn btn-large btn-primary" href="{url url='/policy/edit'}">Create a Custom Policy</a>
 	
 </div>
 </div>
