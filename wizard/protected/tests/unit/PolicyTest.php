@@ -62,7 +62,12 @@ class PolicyTest extends CDbTestCase {
 	}
 	
 	public function testGetBody(){
-		$this->markTestIncomplete();
+		foreach($this->policies as $policy){
+			$this->assertEquals($policy['BODY'], Policy::getBody($policy['EXTERNAL_ID']));
+			
+		}
+		
+		//$this->markTestIncomplete();
 	}
    
 }
