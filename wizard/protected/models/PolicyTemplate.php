@@ -127,4 +127,12 @@ class PolicyTemplate extends CActiveRecord
 		
 	}
 	
+	/**
+	 * gets all active templates
+	 * @return array
+	 */
+	public function getActiveTemplates(){
+		return PolicyTemplate::model()->findAllByAttributes(array("IS_ACTIVE"=>"1"));
+	}
+	
 }

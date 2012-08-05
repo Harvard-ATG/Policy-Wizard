@@ -23,4 +23,9 @@ class PolicyTemplateTest extends CDbTestCase {
 		
 	}
    
+	public function testGetActiveTemplates(){
+		$templates = PolicyTemplate::getActiveTemplates();
+		$this->assertEquals(3, count($templates));
+	}
+
 }
