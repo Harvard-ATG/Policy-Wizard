@@ -40,8 +40,11 @@ class PolicyController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$this->render('index');			
-	
+		$external_id = Yii::app()->getRequest()->getParam('topicId');
+		$body = Policy::getBody($external_id);
+		$this->render('index', array(
+			'policy'=>$body
+		));	
 	}
 
 	/**
@@ -49,7 +52,11 @@ class PolicyController extends Controller
 	 */
 	public function actionAdmindex()
 	{
-		$this->render('admindex');	
+		$external_id = Yii::app()->getRequest()->getParam('topicId');
+		$body = Policy::getBody($external_id);
+		$this->render('admindex', array(
+			'policy'=>$body
+		));	
 	
 	}
 	
