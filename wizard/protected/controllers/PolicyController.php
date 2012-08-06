@@ -80,6 +80,10 @@ class PolicyController extends Controller
 		$template_id = $id;
 		$external_id = Yii::app()->getRequest()->getParam('topicId');
 		$templates = PolicyTemplate::getActiveTemplates();
+		
+		if($template_id != ''){
+			Policy::setTemplate($external_id, $template_id);
+		}
 				
 		
 		// check to see if it's being submitted
