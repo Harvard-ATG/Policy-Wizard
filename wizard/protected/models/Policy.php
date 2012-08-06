@@ -187,4 +187,14 @@ class Policy extends CActiveRecord
 		
 	}
 	
+	public function setTemplate($external_id, $template_id){
+		$policy = Policy::model()->findByAttributes(array("EXTERNAL_ID"=>$external_id));
+		if($policy == null)
+			$policy = new Policy;
+		$policy->EXTERNAL_ID = $external_id;
+		$policy->TEMPLATE_ID = $template_id;
+		return $policy->save();
+		
+	}
+	
 }

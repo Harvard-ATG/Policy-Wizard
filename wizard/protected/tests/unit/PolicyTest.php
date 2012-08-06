@@ -65,9 +65,15 @@ class PolicyTest extends CDbTestCase {
 		foreach($this->policies as $policy){
 			$this->assertEquals($policy['BODY'], Policy::getBody($policy['EXTERNAL_ID']));
 			
-		}
-		
+		}	
 		//$this->markTestIncomplete();
+	}
+	
+	public function testSetTemplate(){
+		$external_id = 1;
+		$this->assertTrue(Policy::setTemplate($external_id, 1));
+		$external_id = 2;
+		$this->assertTrue(Policy::setTemplate($external_id, 1));
 	}
    
 }
