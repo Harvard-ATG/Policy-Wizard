@@ -58,8 +58,8 @@ tinyMCE.init({
         plugins : "spellchecker,pagebreak,style,layer,table,save,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template",
 
         // Theme options
-        theme_advanced_buttons1 :"bold,italic,underline,link,code",
-        theme_advanced_buttons2 :"",
+        theme_advanced_buttons1 :"bold,italic,underline,|,fontselect,fontsizeselect",
+        theme_advanced_buttons2 :"link,bullist,numlist,|,justifyleft,justifycenter,justifyright,justifyfull,removeformat,code",
         theme_advanced_buttons3 :"",
         theme_advanced_buttons4 :"",
 //"save,newdocument,|,bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,|,styleselect,formatselect,fontselect,fontsizeselect",
