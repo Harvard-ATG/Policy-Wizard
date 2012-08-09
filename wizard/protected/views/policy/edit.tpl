@@ -14,7 +14,7 @@
 			<button id="policy-submit" type="submit" class="btn btn-primary">Submit</button>
 			-->
 			<button id="policy-save" class="btn btn-primary" type="button">Save as Draft</button>
-			<a class="btn" href="{url url='/site/admindex'}">Cancel</a>
+			<a class="btn" href="{$cancel_link}">Cancel</a>
 		</div>
 		
 	</fieldset>	
