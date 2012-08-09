@@ -298,7 +298,7 @@ $host = "http://".$_SERVER['HTTP_HOST'];
 font-size: 30px;
 }
 </style>
-    <div class="container">
+    <div>
 
 		<?php echo $content; ?>
 
