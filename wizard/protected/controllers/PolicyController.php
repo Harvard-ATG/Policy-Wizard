@@ -98,7 +98,9 @@ class PolicyController extends Controller
 			// check if policy exists for external_id
 			if(Policy::hasPolicy($external_id)){
 				$body = Policy::getBody($external_id);
-
+				if($body == '' && $template_id != '')
+					$body = PolicyTemplate::getBody($template_id);
+				
 			} else {
 				// then it's new
 				// get the body from the template_id
