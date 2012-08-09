@@ -5,7 +5,7 @@
 		<legend>Edit Policy</legend>
 
 		<button id="template-modal-btn" type="button" class="btn btn-primary">Show Templates</button>
-		<textarea class="input-xlarge span12" id="policy-body" name="body" rows="10">{$body}</textarea>
+		<textarea class="input-xlarge span12" id="policy-body" name="body" rows="10"><h5>{$title}</h5>{$body}</textarea>
 		
 		
 		<div class="form-actions">

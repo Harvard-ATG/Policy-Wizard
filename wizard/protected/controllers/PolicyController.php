@@ -80,6 +80,7 @@ class PolicyController extends Controller
 		$template_id = $id;
 		$external_id = Yii::app()->getRequest()->getParam('topicId');
 		$templates = PolicyTemplate::getActiveTemplates();
+		$title = "";
 		
 		if($template_id != ''){
 			Policy::setTemplate($external_id, $template_id);
@@ -99,7 +100,9 @@ class PolicyController extends Controller
 			if(Policy::hasPolicy($external_id)){
 				$body = Policy::getBody($external_id);
 				if($body == '' && $template_id != ''){
-					$body = PolicyTemplate::getBody($template_id);
+					$policy = PolicyTemplate::getPolicyTemplate($template_id);
+					$body = $policy['BODY'];
+					$title = $policy['NAME'];
 				} else {
 					$cancel_link = $this->url('/policy/admindex');
 				}
@@ -107,8 +110,10 @@ class PolicyController extends Controller
 				// then it's new
 				// get the body from the template_id
 				// NOTE: this never gets called since the template gets set up there
-				$body = PolicyTemplate::getBody($template_id);
-
+				$policy = PolicyTemplate::getPolicyTemplate($template_id);
+				$body = $policy['BODY'];
+				$title = $policy['NAME'];
+	
 			}
 	
 			
@@ -118,6 +123,7 @@ class PolicyController extends Controller
 		$this->render('edit', array(
 			//'template_id' => $template_id,
 			//'policy_id' => $policy_id,
+			'title' => $title,
 			'body' => $body,
 			'templates'=>$templates,
 			'cancel_link'=>$cancel_link
