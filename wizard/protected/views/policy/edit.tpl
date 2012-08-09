@@ -9,11 +9,11 @@
 		
 		
 		<div class="form-actions">
-			<input type="submit" class="btn btn-primary" value="Submit"/>
+			<input type="submit" class="btn btn-primary" value="Publish"/>
 			<!-- THIS WILL NOT WORK WITH ISITES
 			<button id="policy-submit" type="submit" class="btn btn-primary">Submit</button>
 			-->
-			<button id="policy-save" class="btn btn-primary" type="button">Save</button>
+			<button id="policy-save" class="btn btn-primary" type="button">Save as Draft</button>
 			<a class="btn" href="{url url='/site/admindex'}">Cancel</a>
 		</div>
 		
@@ -21,11 +21,11 @@
 </form>
 
 
-<div class="modal hide" id="success-modal">
+<div class="modal hide" id="success-modal" style="text-align: center">
 	<div class="modal-body">
-		<p class="lead">saved</p>
+		<p class="lead">Saved</p>
 	</div>
-	<div class="modal-footer">
+	<div class="modal-footer" style="text-align: center">
 		<a href="#" class="btn" data-dismiss="modal">Close</a>
 	</div>
 </div>
