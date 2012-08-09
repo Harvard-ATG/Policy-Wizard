@@ -1,3 +1,3 @@
-<h1>Collaboration Policy Statement</h1>
+<h3>Collaboration Policy Statement</h3>
 
-<div class="lead"><marquee>This tool has not yet been configured.</marquee></div>
+<div>This tool has not yet been configured.</div>
