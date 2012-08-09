@@ -5,7 +5,7 @@
 		<legend>Edit Policy</legend>
 
 		<button id="template-modal-btn" type="button" class="btn btn-primary">Show Templates</button>
-		<textarea class="input-xlarge span12" id="policy-body" name="body" rows="10"><h5>{$title}</h5>{$body}</textarea>
+		<textarea class="input-xlarge span12" id="policy-body" name="body" rows="10">{if $title != ''}<h5>{$title}</h5>{/if}{$body}</textarea>
 		
 		
 		<div class="form-actions">
@@ -32,14 +32,12 @@
 
 <div class="modal hide" id="template-modal">
 	<div class="modal-body">
-		<ul>
 		{foreach from=$templates item=template}
-			<li class="well">
-				{$template.NAME}<br/>
+			<div class="well">
+				<h5>{$template.NAME}</h5><br/>
 				{$template.BODY}
-			</li>
+			</div>
 		{/foreach}
-		</ul>
 		
 	</div>
 	<div class="modal-footer">
