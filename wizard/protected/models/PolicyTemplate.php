@@ -121,6 +121,12 @@ class PolicyTemplate extends CActiveRecord
 		));
 	}
 	
+	public function getPolicyTemplate($template_id){
+		$policy_template = PolicyTemplate::model()->findByPk($template_id);
+		return $policy_template;
+		
+	}
+	
 	public function getBody($template_id){
 		$policy_template = PolicyTemplate::model()->findByPk($template_id);
 		return $policy_template->BODY;
