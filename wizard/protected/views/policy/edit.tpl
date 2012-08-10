@@ -4,16 +4,16 @@
 	<fieldset>
 		<legend>Edit Policy</legend>
 
-		<button id="template-modal-btn" type="button" class="btn btn-primary">Show Templates</button>
+		<button id="template-modal-btn" type="button" class="btn">Show Templates</button>
 		<textarea class="input-xlarge span12" id="policy-body" name="body" rows="10">{if $title != ''}<h5>{$title}</h5>{/if}{$body}</textarea>
 		
 		
 		<div class="form-actions">
-			<input type="submit" class="btn btn-primary" value="Publish"/>
+			<input type="submit" class="btn" value="Publish"/>
 			<!-- THIS WILL NOT WORK WITH ISITES
 			<button id="policy-submit" type="submit" class="btn btn-primary">Submit</button>
 			-->
-			<button id="policy-save" class="btn btn-primary" type="button">Save as Draft</button>
+			<button id="policy-save" class="btn" type="button">Save as Draft</button>
 			<a class="btn" href="{$cancel_link}">Cancel</a>
 		</div>
 		

@@ -15,12 +15,12 @@
 <div class="well">
 Discussion and the exchange of ideas are essential to academic work.  For assignments in this course, you are encouraged to consult with your classmates on the choice of paper topics and to share sources.  You may find it useful to discuss your chosen topic with your peers, particularly if you are working on the same topic as a classmate.  However, you should ensure that any written work you submit for evaluation is the result of your own research and writing and that it reflects your own approach to the topic.  You must also adhere to standard citation practices in this discipline and properly cite any books, articles, websites, lectures, etc. that have helped you with your work.  If you received any help with your writing (feedback on drafts, etc), you must also acknowledge this assistance. 
 <br/>
-<a class="btn btn-large btn-primary" href="{url url='/policy/edit/1'}">Choose this Template</a>
+<a class="btn" href="{url url='/policy/edit/1'}">Choose this Template</a>
 </div>
 <h5>b.	Problem Sets</h5>
 <div class="well">
 Discussion and the exchange of ideas are essential to doing academic work.  For assignments in this course, you are encouraged to consult with your classmates as you work on problem sets.  However, after discussions with peers, make sure that you can work through the problem yourself and ensure that any answers you submit for evaluation are the result of your own efforts.  In addition, you must cite any books, articles, websites, lectures, etc that have helped you with your work using appropriate citation practices.  Similarly, you must list the names of students with whom you have collaborated on problem sets. <br/>
-<a class="btn btn-large btn-primary" href="{url url='/policy/edit/2'}">Choose this Template</a>
+<a class="btn" href="{url url='/policy/edit/2'}">Choose this Template</a>
 </div>
 </div>
 
@@ -30,7 +30,7 @@ Discussion and the exchange of ideas are essential to doing academic work.  For 
 <div class="well">
 Students should be aware that in this course collaboration of any sort on any work submitted for formal evaluation is not permitted.  This means that you may not discuss your problem sets, paper assignments, exams, or any other assignments with other students.  All work should be entirely your own and must use appropriate citation practices to acknowledge the use of books, articles, websites, lectures, discussions, etc., that you have consulted to complete your assignments.
 <br/>
-<a class="btn btn-large btn-primary" href="{url url='/policy/edit/3'}">Choose this Template</a>
+<a class="btn" href="{url url='/policy/edit/3'}">Choose this Template</a>
 </div>
 
 <h4>III.	Instructions for customizing collaboration policy</h4>
@@ -45,7 +45,7 @@ If you choose to write your own policy on collaboration, keep the following guid
  
 <li class="wrap">You may want to include information about conforming to the College’s policies on academic integrity found in the <a href="http://isites.harvard.edu/icb/icb.do?keyword=k69286&pageid=icb.page355695">Harvard College Handbook for Students</a>.</li>
 	</ol>
-	<a class="btn btn-large btn-primary" href="{url url='/policy/edit'}">Create a Custom Policy</a>
+	<a class="btn" href="{url url='/policy/edit'}">Create a Custom Policy</a>
 	
 </div>
 </div>
