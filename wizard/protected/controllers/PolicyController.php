@@ -62,7 +62,7 @@ class PolicyController extends Controller
 	
 	public function actionSelection(){
 		$external_id = Yii::app()->getRequest()->getParam('topicId');
-		if(Policy::hasPolicy($external_id)){
+		if(Policy::hasPolicy($external_id) && Policy::getBody($external_id) != ''){
 			$this->jsredirect($this->url('/policy/edit'));
 		} else {
 			$this->render('selection');			
@@ -131,6 +131,7 @@ class PolicyController extends Controller
 	}
 	
 	public function actionSave(){
+		error_log("something");
 		$this->layout = false;
 		
 		// get the external_id
@@ -139,7 +140,7 @@ class PolicyController extends Controller
 		$body = Yii::app()->getRequest()->getParam('body');
 		
 		// save
-		echo json_encode(array('response'=>'1'));
+		echo json_encode(array('response'=>Policy::savePolicy($body, $external_id)));
 		Yii::app()->end();
 		
 	}
