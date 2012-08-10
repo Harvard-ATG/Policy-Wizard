@@ -81,6 +81,7 @@ class PolicyController extends Controller
 		$external_id = Yii::app()->getRequest()->getParam('topicId');
 		$templates = PolicyTemplate::getActiveTemplates();
 		$title = "";
+		$is_published = Policy::isPublished($external_id);
 		
 		if($template_id != ''){
 			Policy::setTemplate($external_id, $template_id);
@@ -103,8 +104,10 @@ class PolicyController extends Controller
 					$policy = PolicyTemplate::getPolicyTemplate($template_id);
 					$body = $policy['BODY'];
 					$title = $policy['NAME'];
+					
 				} else {
-					$cancel_link = $this->url('/policy/admindex');
+					if($is_published)
+						$cancel_link = $this->url('/policy/admindex');
 				}
 			} else {
 				// then it's new

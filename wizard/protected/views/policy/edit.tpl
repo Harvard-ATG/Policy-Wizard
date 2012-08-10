@@ -30,6 +30,15 @@
 	</div>
 </div>
 
+<div class="modal hide" id="failure-modal" style="text-align: center">
+	<div class="modal-body">
+		<p class="lead">Failure saving data!</p>
+	</div>
+	<div class="modal-footer" style="text-align: center">
+		<a href="#" class="btn" data-dismiss="modal">Close</a>
+	</div>
+</div>
+
 <div class="modal hide" id="template-modal">
 	<div class="modal-body">
 		{foreach from=$templates item=template}
@@ -92,16 +101,11 @@ tinymce.execCommand('mceToggleEditor',false,'body');
 		console.log("failure");
 	}
 	success = function(data, textStatus, xhr){
-		// TODO fix this shit!
-		console.log(data);
-		console.log(textStatus);
-		console.log(xhr)
-		if(data){
-			console.log("success");
+		if(data.response === true){
+			$('#success-modal').modal();
 		} else {
-			console.log("failure getting response data");
+			$('#failure-modal').modal();
 		}
-		$('#success-modal').modal();
 				
 	}
 	
@@ -109,7 +113,8 @@ tinymce.execCommand('mceToggleEditor',false,'body');
 		// set url
 		url = "{url url='/policy/save' ajax=1}";
 		// get body
-		body = $('#policy-body').val();
+		//body = $('#policy-body').val();
+		body = tinyMCE.get('policy-body').getContent()
 		// set data
 		data = {
 			body: body
@@ -118,7 +123,6 @@ tinymce.execCommand('mceToggleEditor',false,'body');
 			type: 'POST',
 			url: url,
 			data: data,
-			// TODO fix this shit
 			dataType: 'json',
 			error: failure,
 			success: success
