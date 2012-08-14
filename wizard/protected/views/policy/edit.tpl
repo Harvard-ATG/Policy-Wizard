@@ -41,6 +41,20 @@
 
 <div class="modal hide" id="template-modal">
 	<div class="modal-body">
+		<h4>Instructions for customizing collaboration policy</h4>
+		<div>
+		If you choose to write your own policy on collaboration, keep the following guidelines in mind.
+		</div>
+		<div>
+			<ol>
+		<li class="wrap">You should outline explicitly what students may or may not discuss with their classmates outside the classroom and how best to capture those discussions on formal work submitted for course credit.</li>
+
+		<li class="wrap">You may want to include citation resources for students including the <a href="http://usingsources.fas.harvard.edu/icb/icb.do">Harvard Guide to Using Sources</a>.</li>
+
+		<li class="wrap">You may want to include information about conforming to the College’s policies on academic integrity found in the <a href="http://isites.harvard.edu/icb/icb.do?keyword=k69286&pageid=icb.page355695">Harvard College Handbook for Students</a>.</li>
+		</ol>
+		</div>
+		
 		{foreach from=$templates item=template}
 			<div class="well">
 				<h5>{$template.NAME}</h5><br/>
