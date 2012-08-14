@@ -51,15 +51,18 @@ class SiteController extends Controller
 			// if it is published
 			if(Policy::isPublished($external_id)){
 				if($perm_id <= UserIdentity::ENROLLEE){
-					$this->jsredirect($this->url('/policy/index'));
+					//$this->jsredirect($this->url('/policy/index'));
+					$this->forward('/policy/index');
 				} else {
-					$this->jsredirect($this->url('/policy/admindex'));
+					//$this->jsredirect($this->url('/policy/admindex'));
+					$this->forward('/policy/admindex');
 				}
 			} else { // if it's not published
 				if($perm_id <= UserIdentity::ENROLLEE){
 					$this->render('index');			
 				} else {
-					$this->jsredirect($this->url('/site/admindex'));
+					//$this->jsredirect($this->url('/site/admindex'));
+					$this->forward('/site/admindex');
 				}				
 				
 			}
@@ -68,7 +71,8 @@ class SiteController extends Controller
 			if($perm_id <= UserIdentity::ENROLLEE){
 				$this->render('index');			
 			} else {
-				$this->jsredirect($this->url('/site/admindex'));
+				//$this->jsredirect($this->url('/site/admindex'));
+				$this->forward('/site/admindex');
 			}
 			
 		}
