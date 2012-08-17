@@ -7,7 +7,7 @@ class m120731_021332_policies extends CDbMigration
 	{
 		$this->createTable('POLICIES', array(
 			'ID' => 'pk',
-			'EXTERNAL_ID' => 'integer',
+			'EXTERNAL_ID' => 'string',
 			'TEMPLATE_ID' => 'integer',
 			'IS_PUBLISHED' => 'string',
 			'PUBLISHED_BY' => 'text',
