@@ -1,7 +1,7 @@
 <h3>Collaboration Policy Statement</h3>
 	<h4>Instructions to the faculty</h4>
 	<div class="well">
-		As stated in <a href="http://infoforfaculty.fas.harvard.edu/icb/icb.do?keyword=k80790&pageid=icb.page427912">Information for Faculty:</a> “It is essential that instructors set out carefully in writing and at the outset of a course or course assignment the extent of permissible student collaboration in the preparation of papers, computer programs, or examinations. <strong>Students must assume that collaboration in the completion of assignments is permitted unless explicitly prohibited by the instructor.</strong> Students should be reminded that they are expected to acknowledge any collaboration and its extent in all submitted work.”
+		As stated in <a href="http://infoforfaculty.fas.harvard.edu/icb/icb.do?keyword=k80790&amp;pageid=icb.page427912" target="_blank">Information for Faculty:</a> “It is essential that instructors set out carefully in writing and at the outset of a course or course assignment the extent of permissible student collaboration in the preparation of papers, computer programs, or examinations. <strong>Students must assume that collaboration in the completion of assignments is permitted unless explicitly prohibited by the instructor.</strong> Students should be reminded that they are expected to acknowledge any collaboration and its extent in all submitted work.”
 		<br/>
 		<br/>
 		Please select the relevant description below, or you may customize your policy on collaboration for this class. 
@@ -48,7 +48,7 @@ If you choose to write your own policy on collaboration, keep the following guid
 
 <li class="wrap">You may want to include citation resources for students including the <a href="http://usingsources.fas.harvard.edu/icb/icb.do">Harvard Guide to Using Sources</a>.</li>
  
-<li class="wrap">You may want to include information about conforming to the College’s policies on academic integrity found in the <a href="http://isites.harvard.edu/icb/icb.do?keyword=k69286&pageid=icb.page355695">Harvard College Handbook for Students</a>.</li>
+<li class="wrap">You may want to include information about conforming to the College’s policies on academic integrity found in the <a href="http://isites.harvard.edu/icb/icb.do?keyword=k69286&amp;pageid=icb.page355695" target="_blank">Harvard College Handbook for Students</a>.</li>
 	</ol>
 	<a class="btn" href="{url url='/policy/edit'}">Create a Custom Policy</a>
 	
