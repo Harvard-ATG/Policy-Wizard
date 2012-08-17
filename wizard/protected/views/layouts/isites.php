@@ -15,18 +15,16 @@ $host = "http://".$_SERVER['HTTP_HOST'];
 		</icon>
 	</titlebar>
 
-<style>
-<?php include("css/bootstrap-isites.css"); ?>
-</style>
-<!--
+<?php if($_SERVER['WEBROOTS_ENV'] == 'development' || $_SERVER['WEBROOTS_ENV'] == 'staging'){ ?>
+	<style>
+		<?php include("css/bootstrap-isites.css"); ?>
+	</style>
+	<script src="http://twitter.github.com/bootstrap/assets/js/bootstrap.js"></script>
+<?php } else { ?>
 	<link href="<?php echo $host; ?>/css/bootstrap.css" rel="stylesheet" type="text/css"/>
-    <link href="<?php echo $host; ?>/css/bootstrap-responsive.css" rel="stylesheet" type="text/css"/>
--->
-<!--
-	<link href="<?php echo $host; ?>/css/isites-fix.css" rel="stylesheet" type="text/css"/>
--->
-	
-	
+	<link href="<?php echo $host; ?>/css/bootstrap-responsive.css" rel="stylesheet" type="text/css"/>
+    <script src="<?php echo $host; ?>/js/bootstrap.js"></script>
+<?php } ?>	
 
 	
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -47,13 +45,6 @@ $host = "http://".$_SERVER['HTTP_HOST'];
 	topicId = "<?php echo $_REQUEST['topicId']; ?>";
 	pageContentId = "<?php echo $_REQUEST['pageContentId']; ?>";
 	</script>
-    <script src="<?php echo $host; ?>/js/jquery-1.7.2.min.js"></script>
-
-    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap.js"></script>
-
-<!--
-    <script src="<?php echo $host; ?>/js/bootstrap.js"></script>
--->
 
     <div class="bootstrapped">
 
