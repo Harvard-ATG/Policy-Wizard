@@ -3,4 +3,4 @@
 }
 <br/>
 <a href="{url url='/policy/edit'}" class="btn">Edit</a>
-<a href="{url url='/policy/deconfigure'}" class="btn btn-danger">Deconfigure</a>
+<!-- <a href="{url url='/policy/deconfigure'}" class="btn btn-danger">Deconfigure</a> -->
