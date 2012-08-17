@@ -130,7 +130,8 @@ class PolicyController extends Controller
 			'title' => $title,
 			'body' => $body,
 			'templates'=>$templates,
-			'cancel_link'=>$cancel_link
+			'cancel_link'=>$cancel_link,
+			'is_published'=>$is_published
 		));
 	}
 	

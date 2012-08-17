@@ -9,11 +9,16 @@
 		
 		
 		<div class="form-actions">
-			<input type="submit" class="btn" value="Publish"/>
+
+			{if $is_published}
+				<input type="submit" class="btn" value="Save"/>
+			{else}
+				<input type="submit" class="btn" value="Publish"/>
+				<button id="policy-save" class="btn" type="button">Save as Draft</button>
+			{/if}
 			<!-- THIS WILL NOT WORK WITH ISITES
 			<button id="policy-submit" type="submit" class="btn btn-primary">Submit</button>
 			-->
-			<button id="policy-save" class="btn" type="button">Save as Draft</button>
 			<!-- <a class="btn" href="{$cancel_link}">Cancel</a> -->
 			<a class="btn" href="{url url='/site/index'}">Cancel</a>
 		</div>
