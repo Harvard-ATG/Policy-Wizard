@@ -147,8 +147,6 @@ class Policy extends CActiveRecord
 	 * @return boolean
 	 */
 	public function savePolicy($body, $external_id){
-		error_log("savePolicy");
-		error_log($body);
 		$policy = Policy::model()->findByAttributes(array('EXTERNAL_ID'=>$external_id));
 		if($policy == null)
 			$policy = new Policy;
