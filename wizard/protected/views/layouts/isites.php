@@ -21,8 +21,7 @@ $host = "http://".$_SERVER['HTTP_HOST'];
 	</style>
 	<script src="http://twitter.github.com/bootstrap/assets/js/bootstrap.js"></script>
 <?php } else { ?>
-	<link href="<?php echo $host; ?>/css/bootstrap.css" rel="stylesheet" type="text/css"/>
-	<link href="<?php echo $host; ?>/css/bootstrap-responsive.css" rel="stylesheet" type="text/css"/>
+	<link href="<?php echo $host; ?>/css/bootstrap-isites.css" rel="stylesheet" type="text/css"/>
     <script src="<?php echo $host; ?>/js/bootstrap.js"></script>
 <?php } ?>	
 
