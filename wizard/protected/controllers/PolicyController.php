@@ -136,7 +136,6 @@ class PolicyController extends Controller
 	}
 	
 	public function actionSave(){
-		error_log("something");
 		$this->layout = false;
 		
 		// get the external_id
