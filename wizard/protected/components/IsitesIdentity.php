@@ -22,8 +22,11 @@ class IsitesIdentity extends UserIdentity {
 		$this->permissions = Yii::app()->getRequest()->getParam('permissions');
 				
 		$decrypted_userid = Yii::app()->isitestool->getDecryptedUserId($this->userid);
-
+		$this->external_id = $decrypted_userid;
+		$this->username = $decrypted_userid;
+		
 		//$this->username = "$decrypted_userid";
+		/*
 		Yii::app()->HarvardPerson->setup($decrypted_userid);
 		//$this->id = Yii::app()->HarvardPerson->huid;
 		$this->external_id = Yii::app()->HarvardPerson->huid;
@@ -31,7 +34,8 @@ class IsitesIdentity extends UserIdentity {
 		$this->name = Yii::app()->HarvardPerson->full_name;
 		$this->fname = Yii::app()->HarvardPerson->fname;
 		$this->lname = Yii::app()->HarvardPerson->lname;
-
+		*/
+		
 		// determine the level of permission...
 		$perm = '';
 		if(Yii::app()->isitestool->isGuest()){
