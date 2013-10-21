@@ -1,6 +1,6 @@
 <h3>Collaboration Policy Statement</h3>
 
-<form id="policy-form" class="form-horizontal row-fluid isites-form" action="/policy/edit/{$template_id}/{$policy_id}">
+<form id="policy-form" class="form-horizontal row-fluid isites-form">
 	<fieldset>
 		<legend>Edit Policy</legend>
 
@@ -11,15 +11,11 @@
 		<div class="form-actions">
 
 			{if $is_published}
-				<input type="submit" class="btn" value="Save"/>
+				<button id="policy-submit" class="btn" type="button">Save</button>
 			{else}
-				<input type="submit" class="btn" value="Publish"/>
+				<button id="policy-submit" class="btn" type="button">Publish</button>
 				<button id="policy-save" class="btn" type="button">Save as Draft</button>
 			{/if}
-			<!-- THIS WILL NOT WORK WITH ISITES
-			<button id="policy-submit" type="submit" class="btn btn-primary">Submit</button>
-			-->
-			<!-- <a class="btn" href="{$cancel_link}">Cancel</a> -->
 			<a class="btn" href="{url url='/site/index'}">Cancel</a>
 		</div>
 		
@@ -76,6 +72,9 @@
 
 
 <script>
+// this has to be defined outside of the CDATA because otherwise it gets funky
+var submit_url = '{url url="/policy/admindex"}';
+	
 <![CDATA[
 
 tinyMCE.init({
@@ -121,6 +120,7 @@ tinymce.execCommand('mceToggleEditor',false,'body');
 		console.log("failure");
 	}
 	success = function(data, textStatus, xhr){
+		//console.log("success");
 		if(data.response === true){
 			$('#success-modal').modal();
 		} else {
@@ -128,15 +128,32 @@ tinymce.execCommand('mceToggleEditor',false,'body');
 		}
 				
 	}
+	successSubmit = function(data, textStatus, xhr){
+		//console.log("successSubmit");
+		if(data.response === true){
+			// then we just move on to the submit url
+			window.location = submit_url;
+		} else {
+			$('#failure-modal').modal();
+		}
+		
+	}
 	
-	savePolicy = function(){
+	savePolicy = function(submit){
 		// set url
-		url = "{url url='/policy/save' ajax=1}";
+		//console.log("savePolicy");
+		var url = '';
+		if(submit){
+			url = "{url url='/policy/save/1' ajax=1}";			
+		} else {
+			url = "{url url='/policy/save' ajax=1}";
+		}
+		
 		// get body
 		//body = $('#policy-body').val();
-		body = tinyMCE.get('policy-body').getContent()
+		var body = tinyMCE.get('policy-body').getContent();
 		// set data
-		data = {
+		var data = {
 			body: body
 		}
 		$.ajax({
@@ -145,16 +162,30 @@ tinymce.execCommand('mceToggleEditor',false,'body');
 			data: data,
 			dataType: 'json',
 			error: failure,
-			success: success
+			success: function(data, textStatus, xhr){
+				if(submit){
+					successSubmit(data, textStatus, xhr);
+				} else {
+					success(data, textStatus, xhr);
+				}
+			}
 		});
 	}
+	
+	submitPolicy = function(){
+		savePolicy(true);
+	};
+	saveNoSubmitPolicy = function(){
+		savePolicy(false);
+	};
 	
 	openTemplateModal = function(){
 		$('#template-modal').modal();
 	}
 
 	$(document).ready(function(){
-		$('#policy-save').click(savePolicy);
+		$('#policy-save').click(saveNoSubmitPolicy);
+		$('#policy-submit').click(submitPolicy);
 		$('#template-modal-btn').click(openTemplateModal);
 	});
 ]]>
