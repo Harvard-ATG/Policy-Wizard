@@ -75,6 +75,10 @@
 // this has to be defined outside of the CDATA because otherwise it gets htmlentity encoded
 //   &'s become $amp;s and the link no longer works
 var submit_url = '{url url="/policy/admindex"}';
+
+var ajax_save_and_publish_url = "{url url='/policy/save/1' ajax=1}";
+var ajax_save_url = "{url url='/policy/save' ajax=1}";
+
 <![CDATA[
 
 tinyMCE.init({
@@ -143,10 +147,11 @@ tinymce.execCommand('mceToggleEditor',false,'body');
 		// set url
 		//console.log("savePolicy");
 		var url = '';
+		
 		if(submit){
-			url = "{url url='/policy/save/1' ajax=1}";			
+			url = ajax_save_and_publish_url;			
 		} else {
-			url = "{url url='/policy/save' ajax=1}";
+			url = ajax_save_url;
 		}
 		
 		// get body
