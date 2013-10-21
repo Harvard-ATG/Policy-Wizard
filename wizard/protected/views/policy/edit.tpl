@@ -72,9 +72,9 @@
 
 
 <script>
-// this has to be defined outside of the CDATA because otherwise it gets funky
+// this has to be defined outside of the CDATA because otherwise it gets htmlentity encoded
+//   &'s become $amp;s and the link no longer works
 var submit_url = '{url url="/policy/admindex"}';
-	
 <![CDATA[
 
 tinyMCE.init({
