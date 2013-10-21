@@ -135,6 +135,10 @@ class PolicyController extends Controller
 		));
 	}
 	
+	/**
+	 * save action. 
+	 * @param boolean $id $submit this controls whether or not it is published
+	 */
 	public function actionSave($id=0){
 		$this->layout = false;
 		$submit = $id;
