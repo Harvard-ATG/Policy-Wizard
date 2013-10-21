@@ -13,7 +13,7 @@
 function smarty_function_url($params, &$smarty){
 
 	$url = $params['url'];
-	$ajax = $params['ajax'];
+	$ajax = @$params['ajax'];
 	if(Yii::app()->params['authMethod'] == 'isites'){
 		
 		//$urlmanager = Yii::app()->getUrlManager();
