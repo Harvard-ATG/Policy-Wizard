@@ -135,16 +135,27 @@ class PolicyController extends Controller
 		));
 	}
 	
-	public function actionSave(){
+	/**
+	 * save action. 
+	 * @param boolean $id $submit this controls whether or not it is published
+	 */
+	public function actionSave($id=0){
 		$this->layout = false;
+		$submit = $id;
 		
 		// get the external_id
 		$external_id = Yii::app()->getRequest()->getParam('topicId');
 		// get the body
 		$body = Yii::app()->getRequest()->getParam('body');
 		
-		// save
-		echo json_encode(array('response'=>Policy::savePolicy($body, $external_id)));
+		if($submit){
+			// submit / publish
+			echo json_encode(array('response'=>Policy::publishPolicy($body, $external_id)));			
+		} else {
+			// save
+			echo json_encode(array('response'=>Policy::savePolicy($body, $external_id)));			
+		}
+		
 		Yii::app()->end();
 		
 	}

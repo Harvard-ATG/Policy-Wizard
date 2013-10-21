@@ -19,7 +19,7 @@ $host = "http://".$_SERVER['HTTP_HOST'];
 	<style>
 		<?php include("css/bootstrap-isites.css"); ?>
 	</style>
-	<script src="http://twitter.github.com/bootstrap/assets/js/bootstrap.js"></script>
+    <script src="<?php echo $host; ?>/js/bootstrap.js"></script>
 <?php } else { ?>
 	<link href="<?php echo $host; ?>/css/bootstrap-isites.css" rel="stylesheet" type="text/css"/>
     <script src="<?php echo $host; ?>/js/bootstrap.js"></script>
